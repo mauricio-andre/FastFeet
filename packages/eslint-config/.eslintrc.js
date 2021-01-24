@@ -34,4 +34,7 @@ module.exports = {
     // Permita repassar propriedades como {...props}
     'react/jsx-props-no-spreading': 'off',
   },
+  settings: {
+    'import/resolver': {},
+  },
 };
