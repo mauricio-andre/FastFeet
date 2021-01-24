@@ -1,0 +1,18 @@
+@host = http://localhost:3333
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjExNDk2NTUwLCJleHAiOjE2MTIxMDEzNTB9.RpDCw9NTbbAl3Xy0pnnvekkUD92DUti15rwActkZLTM
+
+### Consulta a lista de problemas de uma entrega
+GET {{host}}/delivery/3/problems HTTP/1.1
+Authorization: {{token}}
+
+### Adiciona um problema a uma entrega
+POST {{host}}/delivery/3/problems HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Problema com o veiculo"
+}
+
+### Cancela a entrega
+DELETE {{host}}/problem/2/cancel-delivery HTTP/1.1
+Authorization: {{token}}

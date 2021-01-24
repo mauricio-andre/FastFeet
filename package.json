@@ -1,0 +1,16 @@
+{
+  "name": "fast-feet",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "repository": "https://github.com/mauricio-andre/fastFeet.git",
+  "author": "Mauricio Andre <mauricio.redmerski@ajmer.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fast-feet/eslint-config": "*"
+  }
+}

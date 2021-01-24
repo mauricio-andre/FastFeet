@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: fastfeet
+      POSTGRES_PASSWORD: fastfeet_pass
+      POSTGRES_DB: fastfeet
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

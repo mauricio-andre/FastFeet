@@ -1,0 +1,39 @@
+@host = http://localhost:3333
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjExNDk2NTUwLCJleHAiOjE2MTIxMDEzNTB9.RpDCw9NTbbAl3Xy0pnnvekkUD92DUti15rwActkZLTM
+
+### Consulta listagem de recebedores
+GET {{host}}/recipients
+  ?name="pedro" HTTP/1.1
+Authorization: {{token}}
+
+### Consulta dados de um recebedor especifico
+GET {{host}}/recipients/1 HTTP/1.1
+Authorization: {{token}}
+
+### Cria um novo recebedor
+POST {{host}}/recipients HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "name": "Pedro",
+  "address": "Centro",
+  "number": 0,
+  "complement": "Perto do Cow",
+  "region": "SC",
+  "city": "Joinville",
+  "postalCode": "00000000"
+}
+
+### Edita os dados do recebedor
+PUT {{host}}/recipients/1 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "number": 1
+}
+
+### Exclui um recebedor
+DELETE {{host}}/recipients/1 HTTP/1.1
+Authorization: {{token}}

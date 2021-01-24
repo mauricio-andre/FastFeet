@@ -1,0 +1,37 @@
+@host = http://localhost:3333
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjExNDk2NTUwLCJleHAiOjE2MTIxMDEzNTB9.RpDCw9NTbbAl3Xy0pnnvekkUD92DUti15rwActkZLTM
+
+### Lista todas as entregas cadastradas
+GET {{host}}/deliveries
+  ?problem=no
+  &product= HTTP/1.1
+Authorization: {{token}}
+
+### Lista todos os dados de um entrega especifica
+GET {{host}}/deliveries/1 HTTP/1.1
+Authorization: {{token}}
+
+### Cria uma nova entrega
+POST {{host}}/deliveries HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "product": "Aguá com gás",
+  "recipientId": 2,
+  "deliverymanId": 2
+}
+
+### Edita os dados de uma entrega
+PUT {{host}}/deliveries/1 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "product": "Cloro ativo",
+  "deliverymanId": 2
+}
+
+### Exclui uma entrega
+DELETE {{host}}/deliveries/1 HTTP/1.1
+Authorization: {{token}}

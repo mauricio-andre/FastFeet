@@ -1,0 +1,36 @@
+@host = http://localhost:3333
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjExNDk2NTUwLCJleHAiOjE2MTIxMDEzNTB9.RpDCw9NTbbAl3Xy0pnnvekkUD92DUti15rwActkZLTM
+
+### Lista os entregadores cadastrados
+GET {{host}}/deliverymen HTTP/1.1
+Authorization: {{token}}
+
+### Consultar dados de um entregador especifico
+GET {{host}}/deliverymen/1 HTTP/1.1
+Authorization: {{token}}
+
+### Cria novo entregador
+POST {{host}}/deliverymen HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "name": "Kelvin",
+  "email": "kelvin@contato.com",
+  "avatarId": 12
+}
+
+### Edita dados do entregador
+PUT {{host}}/deliverymen/1 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "name": "Kelvin",
+  "email": "kelvin@contato.com",
+  "avatarId": 13
+}
+
+### Exclui o entregador
+DELETE {{host}}/deliverymen/1
+Authorization: {{token}}

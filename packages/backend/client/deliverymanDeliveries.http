@@ -1,0 +1,29 @@
+@host = http://localhost:3333
+@idDeliveryman = 2
+
+### Consulta encomendas de um entregador
+GET {{host}}/deliveryman/deliveries
+  ?status= HTTP/1.1
+Authorization: {{idDeliveryman}}
+
+### Consulta dados de uma entrega especifica
+GET {{host}}/deliveryman/deliveries/2 HTTP/1.1
+Authorization: {{idDeliveryman}}
+
+### Despacha a entrega
+POST {{host}}/deliveryman/deliveries HTTP/1.1
+Authorization: {{idDeliveryman}}
+Content-Type: application/json
+
+{
+  "id": 2
+}
+
+### Confirma entrega do produto
+PUT {{host}}/deliveryman/deliveries/2 HTTP/1.1
+Authorization: {{idDeliveryman}}
+Content-Type: application/json
+
+{
+  "signatureId": 12
+}
